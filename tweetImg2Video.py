@@ -22,16 +22,23 @@ def process_img(name):
         img = img.resize((w,h))    
         rgb_im = img.convert('RGB')
         rgb_im.save('./toVideoTweet/'+paths[0:-4]+'.jpg')
-        #print("Picture: " + paths + " has been resized!")
+    return "Image Resized!!"
 
 #need to install ffmpeg before
 def toVideo(account_name):
     #generate a video with 3s per frame
     #video name: tweetVideo.mp4
-
+    dirs = os.listdir("./toVideoTweet/")
+    name = account_name+"pic000.jpg"
+    print(name)
+    if name not in set(dirs):
+        return "Fail!!!"
     command="ffmpeg -framerate 1/3 -i ./toVideoTweet/"+account_name+"pic%03d.jpg tweetVideo"+account_name+".mp4 -vf scale=900:1100"
     p=os.popen(command)
     p.close()
+    return "Video Created!!"
+
+
 
 if __name__ == '__main__':
     name = "@AnimalPlanet"
