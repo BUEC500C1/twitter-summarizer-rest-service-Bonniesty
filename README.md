@@ -57,3 +57,17 @@ Image of twitter account(In ```textImage``` folder):
 
 ![image](https://github.com/BUEC500C1/video-Bonniesty/blob/master/textImage/%40cnnbrkpic000.png)
 ![image](https://github.com/BUEC500C1/video-Bonniesty/blob/master/textImage/%40cnnbrkpic001.png)
+
+
+
+Video
+
+@AnimalPlanet Video [Link.]
+
+@cnnbrk Video [Link..]
+
+![image](https://github.com/BUEC500C1/video-Bonniesty/blob/master/textImage/Video_ScreenShot.png)
+
+
+[Link.]: https://github.com/BUEC500C1/video-Bonniesty/blob/master/tweetVideo%40AnimalPlanet.mp4
+[Link..]: https://github.com/BUEC500C1/video-Bonniesty/blob/master/tweetVideo%40cnnbrk.mp4
