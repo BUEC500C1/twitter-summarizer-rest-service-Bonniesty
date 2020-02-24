@@ -17,7 +17,7 @@ def testcase_twt():
     assert twt_api.getUserTwAPI("@cnnbrk", "keys") == ""
 
 def testcase_creat_image():
-    '''
+    
     #download to Mac PC to run this test case
     #test convert text to image
     assert twt_api.text2img("Hello This is test case no.1 text!!!", "test", 11) == "Image Generated!!"
@@ -25,8 +25,8 @@ def testcase_creat_image():
     assert twt_api.text2img("dfgfhhjskkdkslsksj36738222k!!!", "tefd2e43st", 7) == "Image Generated!!"
     assert twt_api.text2img("ghjkljhgjkhnsnahsskas", "t6%4251st", 19) == "Image Generated!!"
     assert twt_api.text2img("Helllo This is test case no.4 text!!!", "666612ddd", 2) == "Image Generated!!"
-    '''
-    pass
+
+
 
 
 
