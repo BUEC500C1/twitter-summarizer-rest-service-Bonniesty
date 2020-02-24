@@ -22,7 +22,7 @@ def text2img(origin_text, account_name,index):
         i = i+30     
     #library fonts
     #font=ImageFont.truetype("/Users/tysun/Library/Fonts/DejaVuSerif-BoldItalic.ttf", 15)
-    font=ImageFont.truetype("/Library/Fonts/Arial.ttf", 15)
+    font=ImageFont.truetype("Arial.ttf", 15)
     im1=Image.open("bg.png")
     draw=ImageDraw.Draw(im1)
     draw.text((20,80),text,(255,165,0),font=font)
