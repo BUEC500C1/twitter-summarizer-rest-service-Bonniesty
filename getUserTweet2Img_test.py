@@ -2,6 +2,7 @@ import pytest
 import getUserTweet2Img as twt_api
 import os
 import configparser
+from os import path
 
 def testcase_twt():
     #without twt crudential
