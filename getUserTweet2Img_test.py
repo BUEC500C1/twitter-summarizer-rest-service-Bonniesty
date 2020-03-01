@@ -1,5 +1,7 @@
 import pytest
 import getUserTweet2Img as twt_api
+import os
+import configparser
 
 def testcase_twt():
     #without twt crudential
@@ -11,10 +13,22 @@ def testcase_twt():
     assert twt_api.getUserTwAPI("333333", "kkk") == "The account or keys is invalid!!"
     assert twt_api.getUserTwAPI("zcdfgvhv", "kkk") == "The account or keys is invalid!!"
     assert twt_api.getUserTwAPI("886fssfAnimet", "kkk") == "The account or keys is invalid!!"
-
-    #empty crudential
-    assert twt_api.getUserTwAPI("@AnimalPlanet", "keys") == ""
-    assert twt_api.getUserTwAPI("@cnnbrk", "keys") == ""
+    
+    config = configparser.ConfigParser()
+    config.read('./keys')
+    #check if keys is empty
+    if len(config.get('auth','consumer_key')) == 0:
+        #empty crudential
+        assert twt_api.getUserTwAPI("@AnimalPlanet", "keys") == ""
+        assert twt_api.getUserTwAPI("@cnnbrk", "keys") == ""
+    else:
+        assert twt_api.getUserTwAPI("@AnimalPlanet", "keys") == "success"
+        assert twt_api.getUserTwAPI("@cnnbrk", "keys") == "success"
+        
+        
+    
+        
+    
 
 def testcase_creat_image():
     
@@ -31,5 +45,10 @@ def testcase_creat_image():
 
 
 if __name__ == '__main__':
-    testcase_twt()
-    testcase_creat_image()
+    if path.exists("keys"):
+        testcase_twt()
+        testcase_creat_image()
+    else:
+        #if no keys file
+        #only test hashcode part (test on downloaded image of @AnimalPlanet and @cnnbrk)
+        testcase_creat_image()
