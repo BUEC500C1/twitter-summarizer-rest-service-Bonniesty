@@ -66,12 +66,8 @@ def getUserTwAPI(account_name, keysFileName):
             return("")
         get_all_tweets(account_name, config)
         return("success!")
-    except Exception as e:
-        print(e)
-        print("The account or keys is invalid!!")
-        return str(e)
-        #return str(Exception)
-        #return("The account or keys is invalid!!")
+    except Exception as e:   
+        return("The account or keys is invalid!!")
         
                          
 
