@@ -1,3 +1,17 @@
+# HW5 RestFul API
+## Task:
+Based on hw4, I use Flask + Apache as web server to create a RestFul API. Then I depoly it to AWS EC2.
+
+AWS link : ```http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com```
+
+On the first page, you can input a account name:
+![image](https://github.com/BUEC500C1/video-Bonniesty/blob/master/textImage/Video_ScreenShot.png)
+
+After you click submit, it will send a POST request and jump to second page.
+On the second page, the video of your twitter account will display.
+
+![image](https://github.com/BUEC500C1/video-Bonniesty/blob/master/textImage/Video_ScreenShot.png)
+
 # HW4 FFmpeg
 
 
