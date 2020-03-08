@@ -1,3 +1,8 @@
+'''
+reference:
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html#python-flask-deploy
+https://flask.palletsprojects.com/en/1.1.x/quickstart/
+'''
 from flask import Flask
 import getUserTweet2Img as twitter_api
 import tweetImg2Video as video_api
@@ -8,16 +13,7 @@ from flask import request
 # EB looks for an 'application' callable by default.
 application = Flask(__name__, static_folder='static')
 
-
-# print a nice greeting.
-def say_hello(username=""):
-    str = ""
-    if username != "":
-        str = "The Twitter account name is %s!" % username
-        call_twt_api(username)
-    return '<p> Welcome to Twitter Feed API!!! \n</p><p>' + str + '</p>\n'
-
-
+#call twitter api
 def call_twt_api(username):
     str1 = "Fail!!!"
     if username != "" and username[0] == "@":
@@ -32,7 +28,7 @@ def call_twt_api(username):
 
 @application.route('/feed')
 def show_user_profile():
-    # show the user profile for that user
+    # show the user video for that user
     account_name = request.args.get('account_name')
     str1 = call_twt_api(account_name)
     video_link = "../static/tweetVideo"+account_name+".mp4"
@@ -42,23 +38,6 @@ def show_user_profile():
 def index():
     return render_template('index.html')
 
-# # some bits of text for the page.
-# header_text = '''
-#     <html>\n<head> <title>Twitter Feed API</title> </head>\n<body>'''
-# instructions = '''
-#     <p><em>Hint</em>: This is a RESTful web service!</p><p>\n Append a Twitter Account Name
-#     to the URL (for example: <code>/@AnimalPlanet</code>) to call the twitter feed API.</p>\n'''
-# home_link = '<p><a href="/">Back</a></p>\n'
-# footer_text = '</body>\n</html>'
-#
-# # add a rule for the index page.
-# app.add_url_rule('/', '', (lambda: header_text +
-#                                            say_hello() + instructions + footer_text))
-#
-# # add a rule when the page is accessed with a name appended to the site
-# # URL.
-# app.add_url_rule('/<username>', 'hello', (lambda username:
-#                                                   header_text + say_hello(username) + home_link + footer_text))
 
 # run the app.
 if __name__ == "__main__":
