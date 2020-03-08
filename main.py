@@ -9,6 +9,16 @@ import queue
 import threading
 import random
 
+def call_twt_api(username):
+    str1 = "Fail!!!"
+    if username != "" and username[0] == "@":
+        status = twitter_api.getUserTwAPI(username, "keys")
+        str1 =status+username+"Twitter Fetch Success!!"
+        if status == "success!":
+            video_api.process_img(name)
+            video_api.toVideo(name)
+            str1 = str1 +"\n Generate Video Finished!!!"
+    return str1
 
 def run_thread(q):
     while(True):
@@ -24,6 +34,15 @@ def run_thread(q):
 
 
 if __name__ == '__main__':
+    name = "@Discovery"
+    str1= call_twt_api(name)
+    print(str1)
+    '''
+    status = twitter_api.getUserTwAPI(name, "keys")
+    if status == "success!":
+        video_api.process_img(name)
+        video_api.toVideo(name)
+    print("Thread Finished!!!")
     q= queue.Queue()
     num = 4
     nameList = ["@AnimalPlanet","@cnnbrk" ]
@@ -42,4 +61,5 @@ if __name__ == '__main__':
     while j<num:
         q.put(None)
         j += 1
+    '''
 
