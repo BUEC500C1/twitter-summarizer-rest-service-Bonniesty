@@ -1,6 +1,7 @@
 # HW5 RestFul API
 ## Task:
 Based on hw4, I use Flask + Apache as web server to create a RestFul API. Then I depoly it to AWS EC2.
+Backend code can be found in  ```application.py```
 
 AWS link : ```http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com```
 
