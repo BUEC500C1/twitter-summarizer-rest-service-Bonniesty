@@ -1,8 +1,7 @@
 # HW5 RestFul API
 *Enter a Twitter account to get top 20 posts **shortcuts** in a* **Video**!!! 
 
-AWS link : ```http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com```
-
+AWS link : [http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com] 
 ## Task:
 Based on hw4, I use Flask + Apache as web server to create a RestFul API. Then I depoly it to AWS EC2.
 Backend code can be found in  ```application.py```
@@ -90,3 +89,4 @@ Video
 
 [Link.]: https://github.com/BUEC500C1/video-Bonniesty/blob/master/tweetVideo%40AnimalPlanet.mp4
 [Link..]: https://github.com/BUEC500C1/video-Bonniesty/blob/master/tweetVideo%40cnnbrk.mp4
+ [http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com]: http://ec2-3-133-153-203.us-east-2.compute.amazonaws.com
